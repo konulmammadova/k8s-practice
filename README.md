@@ -1,26 +1,26 @@
 To start and stop minikube use the following commands:\
 `minikube start`\
-`minikube stop`\
+`minikube stop`
 
-Check if minikube started correspondly:
-``kubectl version``
+Check if minikube started correspondly:\
+`kubectl version`
 
 Pod: Wrapper of a container
 
-See pods/services running:
-``kubectl get all``
+See pods/services running:\
+`kubectl get all`
 
-Running a port/service:
-``kubectl apply -f file_name.yaml``
+Running a port/service:\
+`kubectl apply -f file_name.yaml`
 
-Getting cluster/minikube Ip address:
-``minikube ip``
+Getting cluster/minikube Ip address:\
+`minikube ip`
 
-Get info about the specific pod:
-``kubectl describe pod pod_name``
+Get info about the specific pod:\
+`kubectl describe pod pod_name`
 
-Connecting and running any command in any pod:
-``kubectl exec pod_name -- ls``
+Connecting and running any command in any pod:\
+`kubectl exec pod_name -- ls`
 
 Pods are not visible outside kubernetes cluster. That's why firstly we are trying to connect the port 80 from the inside of the pod.
 Connecting pod and inside the pod we get a shell in the container which is in the pod and can test our access trying connect localhost from the shell:
