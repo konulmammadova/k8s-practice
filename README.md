@@ -1,5 +1,5 @@
 To start and stop minikube use the following commands:
-\ `minikube start``
+\ `minikube start`
 \ `minikube stop`
 
 Check if minikube started correspondly:
