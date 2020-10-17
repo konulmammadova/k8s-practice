@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-webapp
+
+spec:
+  # This defines which pods are going to be represented by this service 
+  # The service becomes a network endpoint for either other services 
+  # or maybe externals users to connect to(exp: browser)
+  selector:
+    app: webapp
+
+  ports:
+    - name: http
+      port: 80
+      # targetPort: 80 # optional, showing port on the container
+
+      # webapp will be accessible through the browser.
+      # k8s allows to use any port number greater than 30.000
+      # The apparent reason for that restriction is just that
+      # to avoid of having any clashes of ports
+      nodePort: 30080
+
+  
+  type: NodePort
