@@ -1,8 +1,6 @@
 To start and stop minikube use the following commands:
-```kubernetes
-minikube start
-```
-```minikube stop```
+\`minikube start``
+\`minikube stop`
 
 Check if minikube started correspondly:
 ``kubectl version``
