@@ -9,6 +9,7 @@ spec:
   # or maybe externals users to connect to(exp: browser)
   selector:
     app: webapp
+    release: 0
 
   ports:
     - name: http
