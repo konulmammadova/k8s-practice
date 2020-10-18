@@ -1,6 +1,6 @@
 # Kubernetes - Quick Reference #
 
-It's written as a personal reference through my learning and practising process.
+It was written as a personal reference through my learning and practising process.
 Can be usefull for anyone who is interested in Kubernetes.
 
 To start and stop minikube use the following commands:\
@@ -9,6 +9,8 @@ To start and stop minikube use the following commands:\
 
 Check if minikube started correspondly:\
 **`kubectl version`**
+
+### Kubernetes Pods and Services ###
 
 Pod: Wrapper of a container
 
@@ -31,11 +33,11 @@ Connecting and running any command in any pod:\
 Pods are not visible outside kubernetes cluster. That's why firstly we are trying to connect the port 80 from the inside of the pod.
 Connecting pod and inside the pod we get a shell in the container which is in the pod and can test our access trying connect localhost from the shell:
     
-    Connect to the pods shell interactively:
-    kubectl -it exec pod_name sh
+Connect to the pods shell interactively:\
+**`kubectl -it exec pod_name sh`**
 
-    Request the localhost in the pod:
-    wget http:/localhost:80
+Request the localhost in the pod:\
+**`wget http:/localhost:80`**
 
 Because of pods have the short life-cycle, they are recreated often,kubernetes has further consept called service which is long-running object.A service have an IP address and stable port.
 We can attach services to pods. With a service we can connect to the cluster and the service will find a suitable pod.
@@ -66,4 +68,6 @@ What Kubernetes would have to do is to stop the current pod and start the new on
 1. We give *release:0* label to the old pod.
 2. Create new pod with *release:0.5* label.
 3. After running new pod, we add new release label to service selector. 
+
+### Kubernetes Replicasets ###
 
